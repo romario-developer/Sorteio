@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: black;
+}
+
+.dado {
+  width: 80px;
+  display: block;
+  margin: 0 auto;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+h1 {
+  color: #fff;
+  font-size: 36px;
+  text-align: center;
+}
+
+p {
+  color: #fff;
+  text-align: center;
+}
+
+input {
+  background-color: #808080;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: 20px;
+  
+}
+
+button {
+  width: 100px;
+  color: #fff;
+  background-color: chartreuse;
+  border: navajowhite;
+  border-radius: 8px;
+  padding: 5px;
+  margin-top: 20px;
+}
+
+::-webkit-input-placeholder {
+  color: #fff;
+  font: 12px verdana, arial, sans-serif;
+}
