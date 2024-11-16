@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: black;
+  font-family: "Roboto", serif;
+}
+
+.dado {
+  width: 583px;
+  height: 374px;
+  display: block;
+  margin: 0 auto;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+h1 {
+  color: #fff;
+  font-size: 36px;
+  text-align: center;
+}
+
+p {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 400;
+  text-align: center;
+  margin: 20px 0;
+}
+
+input {
+  margin: 0 40px;
+  width: 342px;
+  height: 72px;
+  border: none;
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+  font-family: Roboto;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.button-draw {
+  color: #fff;
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 2.5px;
+  border-radius: 10px;
+  background: #aec346;
+  box-shadow: 0px 18px 40px 0px rgba(174, 195, 70, 0.35);
+  display: flex;
+  width: 342px;
+  height: 72px;
+  padding: 0px 76px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 79px;
+  cursor: pointer;
+}
+
+
+/* Fundo embaçado */
+#blur-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Fundo escuro com transparência */
+  backdrop-filter: blur(8px); /* Efeito de desfoque */
+  z-index: 1;
+  display: none;
+}
+
+/* Confetes */
+#confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Confetes não interferem no clique */
+  z-index: 2;
+  display: none;
+}
+
+/* Resultado no centro */
+#resultado {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0); /* Começa pequeno */
+  font-size: 5rem;
+  font-weight: bold;
+  color: white;
+  background-color: #4caf50;
+  border-radius: 10px;
+  padding: 20px 40px;
+  text-align: center;
+  opacity: 0; /* Invisível inicialmente */
+  animation: explode 1s ease-out forwards; /* Animação de explosão */
+  z-index: 3;
+}
+
+@keyframes explode {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 20px;
+  opacity: 0.8;
+  animation: fall 5s linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: rotate(0deg) translateY(-100%);
+  }
+  100% {
+    transform: rotate(360deg) translateY(100vh);
+  }
+}
